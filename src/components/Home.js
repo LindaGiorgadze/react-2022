@@ -1,3 +1,4 @@
+import Bootstrap from "./Bootstrap";
 import Button from "./Button";
 import CounterParent from "./CounterParent";
 import Form from "./Form";
@@ -24,6 +25,7 @@ export default function Home() {
   ];
   return (
     <div>
+      <Bootstrap />
       {btnTexts
         .filter((object) => object.id < 4)
         .map((item) => {
@@ -31,7 +33,7 @@ export default function Home() {
         })}
       <Form />
       <CounterParent />
-      <TodoApp />
+      {/* <TodoApp /> */}
     </div>
   );
 }

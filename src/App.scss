@@ -1,3 +1,4 @@
+@import "~bootstrap/scss/bootstrap";
 @import './styles/variables.scss';
 
 .App {
@@ -89,4 +90,11 @@
   width: 200px;
   background-position: center;
   display: inline-block;
+}
+
+.bootstrapDiv {
+  background-color: chocolate;
+  height: 200px;
+  width: 90%;
+  max-width: 100%;
 }

@@ -54,14 +54,14 @@ export default function App() {
     <div className="App">
       <Header />
       <div className="MainContent">
-        <h3>{t('Welcome to React')}</h3>
+        {/* <h3>{t('Welcome to React')}</h3>
         <button onClick={()=> setLanguage('en')}>En</button>
         <button onClick={()=> setLanguage('fr')}>Fr</button>
         <button onClick={()=> setLanguage('ka')}>Ka</button>
         <button onClick={() => language === 'en' ? setLanguage('ka') : setLanguage('en')}>Change Language</button>
         <Bear className="Bear"/>
         <img className="Panda" src={panda} alt="Panda" />
-        <div className="bgImage"></div>
+        <div className="bgImage"></div> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="About" element={<About />} />
