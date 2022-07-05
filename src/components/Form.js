@@ -1,10 +1,13 @@
+import { useContext } from "react";
 import { useState } from "react";
+import ThemeContext from "./themeContext";
 
 export default function Form() {
   const [state, setState] = useState("test");
   const [title, setTitle] = useState("");
   const [number1, setNumber1] = useState();
   const [number2, setNumber2] = useState();
+  const {theme, setTheme} = useContext(ThemeContext);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -16,7 +19,7 @@ export default function Form() {
   }
 
   return (
-    <form className="form" action="/formSubmitted" onSubmit={handleSubmit}>
+    <form className={`form ${theme}`} action="/formSubmitted" onSubmit={handleSubmit}>
       <h2>Form Title: {title}</h2>
       <p>{state}</p>
       <input

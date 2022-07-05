@@ -16,6 +16,9 @@ import { initReactI18next, useTranslation } from "react-i18next";
 import { useState } from "react";
 import { useEffect } from "react";
 
+//** Context */
+import ThemeContext from "./components/themeContext";
+
 const resources = {
   en: {
     translation: require('./i18n/en.json')
@@ -40,6 +43,7 @@ i18n
   });
 
 export default function App() {
+  const [theme, setTheme] = useState('light');
   const [language, setLanguage] = useState('en');
   useEffect(() => {
     handleLanguageChange(language);
@@ -51,25 +55,31 @@ export default function App() {
   }
 
   return (
-    <div className="App">
-      <Header />
-      <div className="MainContent">
-        {/* <h3>{t('Welcome to React')}</h3>
-        <button onClick={()=> setLanguage('en')}>En</button>
-        <button onClick={()=> setLanguage('fr')}>Fr</button>
-        <button onClick={()=> setLanguage('ka')}>Ka</button>
-        <button onClick={() => language === 'en' ? setLanguage('ka') : setLanguage('en')}>Change Language</button>
-        <Bear className="Bear"/>
-        <img className="Panda" src={panda} alt="Panda" />
-        <div className="bgImage"></div> */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="About" element={<About />} />
-          <Route path='Products' element={<Products />} />
-          <Route path="Products/:id" element={<Product />} />
-        </Routes>
+    <ThemeContext.Provider value={{
+      theme: theme,
+      setTheme: setTheme
+    }}>
+      <div className={`App ${theme}`}>
+        <Header />
+        <div className="MainContent">
+          {/* <h3>{t('Welcome to React')}</h3>
+          <button onClick={()=> setLanguage('en')}>En</button>
+          <button onClick={()=> setLanguage('fr')}>Fr</button>
+          <button onClick={()=> setLanguage('ka')}>Ka</button>
+          <button onClick={() => language === 'en' ? setLanguage('ka') : setLanguage('en')}>Change Language</button>
+          <Bear className="Bear"/>
+          <img className="Panda" src={panda} alt="Panda" />
+          <div className="bgImage"></div> */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="About" element={<About />} />
+            <Route path='Products' element={<Products />} />
+            <Route path="Products/:id" element={<Product />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </ThemeContext.Provider>
+
   );
 }

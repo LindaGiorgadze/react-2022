@@ -1,9 +1,19 @@
+import { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import ThemeContext from "./themeContext";
 
 export default function Header() {
   const { t } = useTranslation();
+  const { theme, setTheme } = useContext(ThemeContext);
   const navigation = ["Home", "About", "Contact", "Products"];
+  function changeTheme() {
+    if (theme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  }
   return (
     <header>
       <nav>
@@ -28,6 +38,7 @@ export default function Header() {
           </li> */}
         </ul>
       </nav>
+      <button onClick={changeTheme}>Change {theme} Theme</button>
     </header>
   );
 }

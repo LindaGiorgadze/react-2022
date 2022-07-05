@@ -33,7 +33,7 @@ export default function Home() {
         })}
       <Form />
       <CounterParent />
-      {/* <TodoApp /> */}
+      <TodoApp />
     </div>
   );
 }
