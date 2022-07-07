@@ -1,7 +1,9 @@
 import Bootstrap from "./Bootstrap";
 import Button from "./Button";
 import CounterParent from "./CounterParent";
+import CounterUseReducer from "./CounterUseReducer";
 import Form from "./Form";
+import Registration from "./Registration";
 import TodoApp from "./TodoApp";
 
 export default function Home() {
@@ -25,7 +27,9 @@ export default function Home() {
   ];
   return (
     <div>
-      <Bootstrap />
+      {/* <Registration />
+      <CounterUseReducer /> */}
+      {/* <Bootstrap />
       {btnTexts
         .filter((object) => object.id < 4)
         .map((item) => {
@@ -33,7 +37,7 @@ export default function Home() {
         })}
       <Form />
       <CounterParent />
-      <TodoApp />
+      <TodoApp /> */}
     </div>
   );
 }
