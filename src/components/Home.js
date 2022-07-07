@@ -1,5 +1,6 @@
 import Bootstrap from "./Bootstrap";
 import Button from "./Button";
+import CounterClass from "./CounterClass";
 import CounterParent from "./CounterParent";
 import CounterUseReducer from "./CounterUseReducer";
 import Form from "./Form";
@@ -27,6 +28,7 @@ export default function Home() {
   ];
   return (
     <div>
+      <CounterClass initialNumber={0} />
       {/* <Registration />
       <CounterUseReducer /> */}
       {/* <Bootstrap />
