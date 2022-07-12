@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import Button from "./Button";
+import Input from "./Input";
 import TodoItem from "./TodoItem";
 
 const _todoItems = [
@@ -12,8 +13,6 @@ export default function TodoApp() {
   const [inputValue, setInputValue] = useState("");
   const [todoItems, setTodoItems] = useState(_todoItems);
   const input = useRef();
-
-  console.log(input.current);
 
   useEffect(() => {
     input.current.focus();
@@ -44,12 +43,7 @@ export default function TodoApp() {
     <div className="Counter">
       <h3>Todo App</h3>
       <form onSubmit={handleSubmit}>
-        <input
-          ref={input}
-          type="text"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
+        <Input ref={input} value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
         <Button type="submit" text="Add Item" />
       </form>
 
