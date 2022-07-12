@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "./Button";
 
+let interval;
+
 class CounterClass extends React.Component {
   state = {
     number: this.props.initialNumber,
@@ -19,17 +21,25 @@ class CounterClass extends React.Component {
     });
   }
 
-//   componentDidMount() {
-//     interval = setInterval(() => {
-//         this.setState({
-//             number: this.state + 5
-//         });
-//         console.log(this.state);
-//       }, 2000);
-//   }
-//   componentWillUnmount() {
-//     clearInterval(interval);
-//   }
+  componentDidUpdate(prevProps) {
+    if (this.props.initialNumber !== prevProps.initialNumber) {
+      this.setState({
+        number: this.props.initialNumber
+      })
+    }
+  }
+
+  // componentDidMount() {
+  //   interval = setInterval(() => {
+  //       this.setState({
+  //           number: this.state.number + 5
+  //       });
+  //       console.log(this.state.number);
+  //     }, 2000);
+  // }
+  // componentWillUnmount() {
+  //   clearInterval(interval);
+  // }
 
   render() {
     return (

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Bootstrap from "./Bootstrap";
 import Button from "./Button";
 import CounterClass from "./CounterClass";
@@ -8,6 +9,7 @@ import Registration from "./Registration";
 import TodoApp from "./TodoApp";
 
 export default function Home() {
+  const [initialValue, setInitialValue] = useState(0);
   const btnTexts = [
     {
       id: 1,
@@ -28,7 +30,8 @@ export default function Home() {
   ];
   return (
     <div>
-      <CounterClass initialNumber={0} />
+      {/* <Button onClick={() => setInitialValue(initialValue+5)} text='Change Initial Value'/>
+      <CounterClass initialNumber={initialValue} /> */}
       {/* <Registration />
       <CounterUseReducer /> */}
       {/* <Bootstrap />
@@ -38,8 +41,8 @@ export default function Home() {
           return <Button key={item.id} text={item.text} />;
         })}
       <Form />
-      <CounterParent />
-      <TodoApp /> */}
+      <CounterParent /> */}
+      <TodoApp />
     </div>
   );
 }
