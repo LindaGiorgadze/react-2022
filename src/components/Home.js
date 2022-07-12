@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import UseResolution from "../hooks/useResolution";
 import Bootstrap from "./Bootstrap";
 import Button from "./Button";
 import CounterClass from "./CounterClass";
@@ -10,6 +11,10 @@ import TodoApp from "./TodoApp";
 
 export default function Home() {
   const [initialValue, setInitialValue] = useState(0);
+  const resolution = UseResolution();
+  
+  console.log(resolution);
+
   const btnTexts = [
     {
       id: 1,
@@ -30,8 +35,14 @@ export default function Home() {
   ];
   return (
     <div>
-      {/* <Button onClick={() => setInitialValue(initialValue+5)} text='Change Initial Value'/>
-      <CounterClass initialNumber={initialValue} /> */}
+      {
+        resolution <=700 && (
+          <>
+            <Button onClick={() => setInitialValue(initialValue+5)} text='Change Initial Value'/>
+            <CounterClass initialNumber={initialValue} />
+          </>
+        )
+      }
       {/* <Registration />
       <CounterUseReducer /> */}
       {/* <Bootstrap />
@@ -42,7 +53,7 @@ export default function Home() {
         })}
       <Form />
       <CounterParent /> */}
-      <TodoApp />
+      {/* <TodoApp /> */}
     </div>
   );
 }
