@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import UseResolution from "../hooks/useResolution";
 import Bootstrap from "./Bootstrap";
 import Button from "./Button";
+import CalculateFactorial from "./CalculateFactorial";
 import CounterClass from "./CounterClass";
 import CounterParent from "./CounterParent";
 import CounterUseReducer from "./CounterUseReducer";
@@ -12,8 +13,6 @@ import TodoApp from "./TodoApp";
 export default function Home() {
   const [initialValue, setInitialValue] = useState(0);
   const resolution = UseResolution();
-  
-  console.log(resolution);
 
   const btnTexts = [
     {
@@ -35,6 +34,7 @@ export default function Home() {
   ];
   return (
     <div>
+      <CalculateFactorial />
       {
         resolution <=700 && (
           <>
