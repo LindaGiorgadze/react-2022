@@ -3,5 +3,6 @@
     "Home": "Home",
     "About": "About",
     "Contact": "Contact",
-    "Products": "Products"
+    "Products": "Products",
+    "Link": "<a href='#'>Link</a>"
 }

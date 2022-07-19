@@ -39,6 +39,10 @@ export default function Header() {
         </ul>
       </nav>
       <button onClick={changeTheme}>Change {theme} Theme</button>
+      <div >
+        {t("Link")}
+      </div>
+      <div dangerouslySetInnerHTML={{ __html: t("Link") }} />
     </header>
   );
 }

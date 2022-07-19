@@ -1,7 +1,9 @@
+import NewTodoApp from "./NewTodoApp";
+
 export default function About() {
     return (
         <section>
-            About Page
+            <NewTodoApp />
         </section>
     )
 }

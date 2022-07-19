@@ -43,16 +43,16 @@ export default function Home() {
           </>
         )
       }
-      {/* <Registration />
-      <CounterUseReducer /> */}
-      {/* <Bootstrap />
+      <Registration />
+      <CounterUseReducer />
+      <Bootstrap />
       {btnTexts
         .filter((object) => object.id < 4)
         .map((item) => {
           return <Button key={item.id} text={item.text} />;
         })}
       <Form />
-      <CounterParent /> */}
+      <CounterParent />
       {/* <TodoApp /> */}
     </div>
   );
